@@ -1,0 +1,31 @@
+{
+    "name": "agenciafmd/filament-testimonials",
+    "description": "Filament - Testimonials",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Agência FMD",
+            "email": "contato@fmd.ag",
+            "homepage": "https://fmd.ag/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "agenciafmd/filament-admix": "v1.x-dev|dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Agenciafmd\\Testimonials\\": "src/",
+            "Agenciafmd\\Testimonials\\Database\\Factories\\": "database/factories/",
+            "Agenciafmd\\Testimonials\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Agenciafmd\\Testimonials\\Providers\\TestimonialServiceProvider"
+            ]
+        }
+    }
+}
