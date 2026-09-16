@@ -53,7 +53,7 @@ final class TestimonialForm
                                         ->visible(config('filament-testimonials.video.visible', true)),
                                     ImageUploadWithDefault::make(name: 'image', directory: 'testimonial/image')
                                         ->afterLabel('Max. ' . config('filament-testimonials.image.width', 720) . 'x' . config('filament-testimonials.image.height', 1280))
-                                        ->imageEditorAspectRatioOptions(config('filament-testimonials.image.aspect_ratio_options', ['9:16']))
+                                        ->imageEditorAspectRatioOptions(config('filament-testimonials.image.ratio', ['9:16']))
                                         ->imageEditorViewportWidth(config('filament-testimonials.image.width', 720))
                                         ->imageEditorViewportHeight(config('filament-testimonials.image.height', 1280))
                                         ->visible(config('filament-testimonials.image.visible', true)),

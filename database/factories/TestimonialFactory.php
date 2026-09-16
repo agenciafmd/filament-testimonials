@@ -21,7 +21,7 @@ final class TestimonialFactory extends Factory
         $slug = str($name)
             ->slug()
             ->toString();
-        $ratio = collect(config('filament-testimonials.image.aspect_ratio_options', ['4:3']))
+        $ratio = collect(config('filament-testimonials.image.ratio', ['4:3']))
             ->map(fn (string $ratio) => str($ratio)
                 ->replace(':', 'x')
                 ->toString())

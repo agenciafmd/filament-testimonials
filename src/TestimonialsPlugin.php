@@ -17,7 +17,7 @@ final class TestimonialsPlugin implements Plugin
 
     public function getId(): string
     {
-        return 'filament-testimonials';
+        return 'testimonials';
     }
 
     public function register(Panel $panel): void
