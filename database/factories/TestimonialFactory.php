@@ -8,6 +8,9 @@ use Agenciafmd\Testimonials\Models\Testimonial;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Storage;
 
+/**
+ * @extends Factory<Testimonial>
+ */
 final class TestimonialFactory extends Factory
 {
     protected $model = Testimonial::class;

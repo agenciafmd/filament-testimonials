@@ -50,10 +50,8 @@ final class TestimonialsTable
                     RestoreBulkAction::make(),
                 ]),
             ])
-            ->defaultSort(function (Builder $query): Builder {
-                return $query->orderBy('is_active', 'desc')
-                    ->orderBy('star', 'desc')
-                    ->orderBy('name');
-            });
+            ->defaultSort(fn (Builder $query): Builder => $query->orderBy('is_active', 'desc')
+                ->orderBy('star', 'desc')
+                ->orderBy('name'));
     }
 }

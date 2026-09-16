@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Agenciafmd\Testimonials\Models;
 
+use Agenciafmd\Admix\Traits\WithScopes;
 use Agenciafmd\Testimonials\Database\Factories\TestimonialFactory;
 use Illuminate\Database\Eloquent\Attributes\UseFactory;
 use Illuminate\Database\Eloquent\Builder;
@@ -17,7 +18,17 @@ use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 #[UseFactory(TestimonialFactory::class)]
 final class Testimonial extends Model implements AuditableContract
 {
-    use Auditable, HasFactory, Prunable, SoftDeletes;
+    use Auditable;
+    use HasFactory;
+    use Prunable;
+    use SoftDeletes;
+    use WithScopes;
+
+    protected array $defaultSort = [
+        'is_active' => 'desc',
+        'star' => 'desc',
+        'name' => 'asc',
+    ];
 
     public function prunable(): Builder
     {
