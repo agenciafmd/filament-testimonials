@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Agenciafmd\Testimonials\Resources\Testimonials\Schemas;
 
-use Agenciafmd\Admix\Resources\Forms\Components\ImageUploadWithDefault;
+use Agenciafmd\Admix\Resources\Forms\Components\ImageUploadWithAutomaticallyResize;
 use Agenciafmd\Admix\Resources\Forms\Components\RichEditorWithDefault;
 use Agenciafmd\Admix\Resources\Forms\Components\YouTubeInput;
 use Agenciafmd\Admix\Resources\Infolists\Components\DateTimeEntry;
@@ -51,11 +51,12 @@ final class TestimonialForm
                                         ->columnSpanFull(),
                                     YouTubeInput::make()
                                         ->visible(config('filament-testimonials.video.visible', true)),
-                                    ImageUploadWithDefault::make(name: 'image', directory: 'testimonial/image')
-                                        ->afterLabel('Max. ' . config('filament-testimonials.image.width', 720) . 'x' . config('filament-testimonials.image.height', 1280))
-                                        ->imageEditorAspectRatioOptions(config('filament-testimonials.image.ratio', ['9:16']))
-                                        ->imageEditorViewportWidth(config('filament-testimonials.image.width', 720))
-                                        ->imageEditorViewportHeight(config('filament-testimonials.image.height', 1280))
+                                    ImageUploadWithAutomaticallyResize::make(
+                                        name: 'image',
+                                        directory: 'testimonial/image',
+                                        width: (string) config('filament-testimonials.image.width', 720),
+                                        height: (string) config('filament-testimonials.image.height', 1280),
+                                    )
                                         ->visible(config('filament-testimonials.image.visible', true)),
                                 ])
                                 ->collapsible()
