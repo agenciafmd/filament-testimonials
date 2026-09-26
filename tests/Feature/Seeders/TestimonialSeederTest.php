@@ -19,5 +19,5 @@ it('seeds the testimonials from the factory', function (): void {
 
     seed(TestimonialSeeder::class);
 
-    expect(Testimonial::query()->count())->toBeGreaterThan(0);
+    expect(Testimonial::query()->count())->toBe(20);
 });
