@@ -39,12 +39,16 @@ final class TestimonialResource extends Resource
 
     public static function getNavigationSort(): ?int
     {
-        return config('filament-testimonials.navigation_sort');
+        $navigationSort = config('filament-testimonials.navigation_sort');
+
+        return is_int($navigationSort) ? $navigationSort : null;
     }
 
     public static function getNavigationGroup(): ?string
     {
-        return config('filament-testimonials.navigation_group');
+        $navigationGroup = config('filament-testimonials.navigation_group');
+
+        return is_string($navigationGroup) ? $navigationGroup : null;
     }
 
     public static function form(Schema $schema): Schema

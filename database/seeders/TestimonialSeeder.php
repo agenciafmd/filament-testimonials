@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Agenciafmd\Testimonials\Database\Seeders;
 
+use Agenciafmd\Testimonials\Database\Factories\TestimonialFactory;
 use Agenciafmd\Testimonials\Models\Testimonial;
 use Illuminate\Database\Seeder;
 
@@ -14,7 +15,7 @@ final class TestimonialSeeder extends Seeder
         Testimonial::query()
             ->truncate();
 
-        Testimonial::factory()
+        TestimonialFactory::new()
             ->count(20)
             ->create();
     }

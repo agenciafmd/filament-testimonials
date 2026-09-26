@@ -19,17 +19,26 @@ use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 final class Testimonial extends Model implements AuditableContract
 {
     use Auditable;
+
+    /** @use HasFactory<TestimonialFactory> */
     use HasFactory;
+
     use Prunable;
     use SoftDeletes;
     use WithScopes;
 
+    /**
+     * @var array<string, 'asc'|'desc'>
+     */
     protected array $defaultSort = [
         'is_active' => 'desc',
         'star' => 'desc',
         'name' => 'asc',
     ];
 
+    /**
+     * @return Builder<self>
+     */
     public function prunable(): Builder
     {
         return self::query()

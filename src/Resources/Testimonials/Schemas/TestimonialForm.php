@@ -42,22 +42,22 @@ final class TestimonialForm
                                         ->translateLabel()
                                         ->required()
                                         ->rows(5)
-                                        ->visible(config('filament-testimonials.short_description.visible', true))
+                                        ->visible(config()->boolean('filament-testimonials.short_description.visible', true))
                                         ->columnSpanFull(),
                                     RichEditorWithDefault::make(name: 'description', directory: 'testimonial/description')
                                         ->translateLabel()
                                         ->required()
-                                        ->visible(config('filament-testimonials.description.visible', true))
+                                        ->visible(config()->boolean('filament-testimonials.description.visible', true))
                                         ->columnSpanFull(),
                                     YouTubeInput::make()
-                                        ->visible(config('filament-testimonials.video.visible', true)),
+                                        ->visible(config()->boolean('filament-testimonials.video.visible', true)),
                                     ImageUploadWithAutomaticallyResize::make(
                                         name: 'image',
                                         directory: 'testimonial/image',
-                                        width: (string) config('filament-testimonials.image.width', 720),
-                                        height: (string) config('filament-testimonials.image.height', 1280),
+                                        width: (string) config()->integer('filament-testimonials.image.width', 720),
+                                        height: (string) config()->integer('filament-testimonials.image.height', 1280),
                                     )
-                                        ->visible(config('filament-testimonials.image.visible', true)),
+                                        ->visible(config()->boolean('filament-testimonials.image.visible', true)),
                                 ])
                                 ->collapsible()
                                 ->columns()
