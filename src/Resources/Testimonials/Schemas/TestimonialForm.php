@@ -54,8 +54,8 @@ final class TestimonialForm
                                     ImageUploadWithAutomaticallyResize::make(
                                         name: 'image',
                                         directory: 'testimonial/image',
-                                        width: (string) config()->integer('filament-testimonials.image.width', 720),
-                                        height: (string) config()->integer('filament-testimonials.image.height', 1280),
+                                        width: config()->integer('filament-testimonials.image.width', 720),
+                                        height: config()->integer('filament-testimonials.image.height', 1280),
                                     )
                                         ->visible(config()->boolean('filament-testimonials.image.visible', true)),
                                 ])
