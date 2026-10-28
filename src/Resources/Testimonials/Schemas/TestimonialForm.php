@@ -6,6 +6,7 @@ namespace Agenciafmd\Testimonials\Resources\Testimonials\Schemas;
 
 use Agenciafmd\Admix\Resources\Forms\Components\ImageUploadWithAutomaticallyResize;
 use Agenciafmd\Admix\Resources\Forms\Components\RichEditorWithDefault;
+use Agenciafmd\Admix\Resources\Forms\Components\VideoUrlInput;
 use Agenciafmd\Admix\Resources\Forms\Components\YouTubeInput;
 use Agenciafmd\Admix\Resources\Infolists\Components\DateTimeEntry;
 use Filament\Forms\Components\Textarea;
@@ -50,7 +51,7 @@ final class TestimonialForm
                                         ->required()
                                         ->visible(config()->boolean('filament-testimonials.description.visible', true))
                                         ->columnSpanFull(),
-                                    YouTubeInput::make()
+                                    self::videoInput()
                                         ->visible(config()->boolean('filament-testimonials.video.visible', true)),
                                     ImageUploadWithAutomaticallyResize::make(
                                         name: 'image',
@@ -84,5 +85,14 @@ final class TestimonialForm
                     ])
                     ->columnSpanFull(),
             ]);
+    }
+
+    private static function videoInput(): TextInput
+    {
+        if (config()->boolean('filament-testimonials.video.instagram_reel', false)) {
+            return VideoUrlInput::make();
+        }
+
+        return YouTubeInput::make();
     }
 }

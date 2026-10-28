@@ -14,6 +14,7 @@ return [
     ],
     'video' => [
         'visible' => false,
+        'instagram_reel' => false,
     ],
     'image' => [
         'visible' => true,
