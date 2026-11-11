@@ -25,6 +25,7 @@ final class TestimonialFactory extends Factory
         return [
             'is_active' => fake()->boolean(),
             'star' => fake()->boolean(),
+            'sort' => config('filament-testimonials.sort.visible') ? fake()->numberBetween(1, 100) : null,
             'name' => $name,
             'short_description' => config('filament-testimonials.short_description.visible') ? fake()->text() : null,
             'description' => config('filament-testimonials.description.visible') ? fake()->text(maxNbChars: 200) : null,

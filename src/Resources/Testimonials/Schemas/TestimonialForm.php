@@ -78,6 +78,12 @@ final class TestimonialForm
                                         ->default(false),
                                     DateTimeEntry::make('created_at'),
                                     DateTimeEntry::make('updated_at'),
+                                    TextInput::make('sort')
+                                        ->translateLabel()
+                                        ->numeric()
+                                        ->minValue(1)
+                                        ->visible(config()->boolean('filament-testimonials.sort.visible', false))
+                                        ->columnSpanFull(),
                                 ])
                                 ->collapsible()
                                 ->columns(),

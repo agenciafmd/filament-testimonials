@@ -26,6 +26,10 @@ final class TestimonialsTable
                     ->translateLabel()
                     ->sortable()
                     ->searchable(),
+                TextColumn::make('sort')
+                    ->translateLabel()
+                    ->visible(config()->boolean('filament-testimonials.sort.visible', false))
+                    ->sortable(),
                 ToggleColumn::make('star')
                     ->translateLabel()
                     ->sortable(),

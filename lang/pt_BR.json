@@ -6,5 +6,6 @@
     "Description": "Descrição",
     "Video": "Vídeo",
     "Image": "Imagem",
-    "Slug": "Slug"
+    "Slug": "Slug",
+    "Sort": "Ordenação"
 }

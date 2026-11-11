@@ -9,4 +9,5 @@ return [
     'video' => 'Vídeo',
     'image' => 'Imagem',
     'slug' => 'Slug',
+    'sort' => 'Ordenação',
 ];

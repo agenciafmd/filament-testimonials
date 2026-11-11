@@ -32,6 +32,7 @@ final class Testimonial extends Model implements AuditableContract
      */
     protected array $defaultSort = [
         'is_active' => 'desc',
+        'sort' => 'asc',
         'star' => 'desc',
         'name' => 'asc',
     ];
@@ -50,6 +51,7 @@ final class Testimonial extends Model implements AuditableContract
         return [
             'is_active' => 'boolean',
             'star' => 'boolean',
+            'sort' => 'integer',
         ];
     }
 }

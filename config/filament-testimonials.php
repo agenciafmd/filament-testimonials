@@ -9,6 +9,9 @@ return [
     'short_description' => [
         'visible' => true,
     ],
+    'sort' => [
+        'visible' => false,
+    ],
     'description' => [
         'visible' => false,
     ],
