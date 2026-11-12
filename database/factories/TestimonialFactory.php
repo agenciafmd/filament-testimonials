@@ -7,12 +7,14 @@ namespace Agenciafmd\Testimonials\Database\Factories;
 use Agenciafmd\Testimonials\Models\Testimonial;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Storage;
+use Override;
 
 /**
  * @extends Factory<Testimonial>
  */
 final class TestimonialFactory extends Factory
 {
+    #[Override]
     protected $model = Testimonial::class;
 
     public function definition(): array

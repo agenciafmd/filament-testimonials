@@ -7,10 +7,12 @@ namespace Agenciafmd\Testimonials\Resources\Testimonials\Pages;
 use Agenciafmd\Admix\Resources\Concerns\RedirectBack;
 use Agenciafmd\Testimonials\Resources\Testimonials\TestimonialResource;
 use Filament\Resources\Pages\CreateRecord;
+use Override;
 
 final class CreateTestimonial extends CreateRecord
 {
     use RedirectBack;
 
+    #[Override]
     protected static string $resource = TestimonialResource::class;
 }
